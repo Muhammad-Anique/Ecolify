@@ -6,7 +6,6 @@ import reportWebVitals from './reportWebVitals';
 import {
   createBrowserRouter,
   RouterProvider,
-  Route,
 } from "react-router-dom";
 import Contact from "./Contact"
 import About from './About';
