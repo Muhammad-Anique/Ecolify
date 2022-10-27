@@ -9,18 +9,23 @@ import {
   Route,
 } from "react-router-dom";
 import Contact from "./Contact"
+import About from './About';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/hello",
     element: <div>Hello world!</div>,
   },
   {
-    path:"/app",
+    path:"/",
     element:<App/>,
     children: [
       {
-        path: "contacts",
+        path: "about",
+        element: <About />,
+      },
+      {
+        path: "contact",
         element: <Contact />,
       },
     ],

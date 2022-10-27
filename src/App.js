@@ -9,13 +9,14 @@ function App() {
        <nav>
           <ul>
             <li>
-              <Link to={`contacts`}>Your Name</Link>
+              <Link to={`contact`}>Contact</Link>
+            </li>
+            <li>
+              <Link to={`about`}>About</Link>
             </li>
           </ul>
         </nav>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>h2</h1>
+      <h1>This Ecommerce Website</h1>
       <div>
       <Outlet />
       </div>
