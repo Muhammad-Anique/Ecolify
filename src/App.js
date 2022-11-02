@@ -1,11 +1,13 @@
 import { Outlet ,Link } from "react-router-dom";
 import './App.css';
+import Navbaar from "./Components/Navbaar/Navbaar";
+
 
 function App() {
   return (
     <>
-    <div>
-       <nav>
+   
+       {/* <nav>
           <ul>
             <li>
               <Link to={`contact`}>Contact</Link>
@@ -14,12 +16,16 @@ function App() {
               <Link to={`about`}>About</Link>
             </li>
           </ul>
-        </nav>
-      <h1>This Ecommerce Website</h1>
+        </nav> */}
+
+
+      <Navbaar/>
+      <div>
       <div>
       <Outlet />
       </div>
     </div>
+   
     </>
 
   );

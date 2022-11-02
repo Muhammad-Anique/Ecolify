@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.Navbaar{
+
+    background-color:#3853d8;
+    width: 100%;
+    height: 50px;
+}
+
+.NavContainer{
+    width: inherit;
+    height: inherit;
+    display: flex;
+    justify-content: space-between;
+   
+
+}
+
+.logo{
+    color:white;
+}
+
+.At{
+    color: white;
+    font-size: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.At:hover{
+   color: rgb(200, 194, 194);
+
+}

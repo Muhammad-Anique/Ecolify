@@ -3,12 +3,16 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { store } from './store';
+import { Provider } from 'react-redux';
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
 import Contact from "./Contact"
 import About from './About';
+import Home from "./Components/Home/Home";
+
 
 const router = createBrowserRouter([
   {
@@ -17,7 +21,7 @@ const router = createBrowserRouter([
   },
   {
     path:"/",
-    element:<App/>,
+    element: <Provider store={store}><App /></Provider>,
     children: [
       {
         path: "about",
@@ -27,15 +31,20 @@ const router = createBrowserRouter([
         path: "contact",
         element: <Contact />,
       },
+
+      {
+        path: "/",
+        element: <Home />,
+      },
+
+
     ],
   }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-     <RouterProvider router={router} />
-  </React.StrictMode>
+  <RouterProvider router={router} />
 );
 
 // If you want to start measuring performance in your app, pass a function

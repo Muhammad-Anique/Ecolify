@@ -1,0 +1,32 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.Card{
+  background-color: white;
+  width: 310px;
+  height: 320px;
+  margin: 3px;  
+  border: 2px solid rgb(226, 223, 223)
+}
+
+.img{
+    width: 306px;
+    height : 230px;
+}
+
+.desc_price{
+margin-bottom: 5px;
+color: rgb(0, 60, 255);
+}
+
+.desc_title{
+    margin-bottom: 5px;
+}
+
+.desc{
+
+    margin:15px;
+}
