@@ -5,6 +5,8 @@ import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { setlist } from '../../productlistslice'
 import './Home.css'
+import banner from '../../banner.png'
+import Filterbar from '../Filterbar/Filterbar'
 
 const Home = () => {
 
@@ -26,11 +28,33 @@ const fetchProducts = async () => {
 
 
   return (
-    <div className='cont'>
+    <>
+    <div className='Header'>
+    <div>
+      <img className='banner' src={banner} alt="" />
+    </div>  
+    <Filterbar/>
+    </div>
+
+    <div className='Product'>
+      <div className='sidebaar'>
+        <div className='cate'>
+          <div className='h'><h2>Category</h2><span class="material-symbols-outlined">category</span></div>
+          <div className='c'><p>Home Aplliances</p></div>
+          <div className='c'><p>Clothes</p></div>
+          <div className='c'><p>Beauty products</p></div>
+          <div className='c'><p>Electronics</p></div>
+          <div className='c'><p>Home Decoratives</p></div>
+          <div className='c'><p>Mobile Phones</p></div>     
+        </div>
+      </div>
+      <div className='cont'>
        {pList.map(product => {
         return (<Card hoverable key={product.id} title={product.title} img={product.thumbnail} price={product.price} />);
       })}
     </div>
+    </div>
+    </>
   )
 }
 

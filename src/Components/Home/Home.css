@@ -11,6 +11,70 @@ body{
 .cont{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    width: 95%;
+    width: 100%;
     height: 100%;
+    padding-top:15px ;
+    padding-right:25px;
+    padding-left:15px;
+   
+}
+
+.sidebaar{
+    width:25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.cate{
+
+}
+
+.h{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom:10px;
+}
+
+.c{
+margin:4px;
+}
+
+.banner{
+    width: 100%;
+    margin: 0;
+}
+
+.division{
+    margin-top: 0;
+    background-color:#61b0e8;
+    width:100%;
+    height:150px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.ExploreBox{
+    border: 2px solid rgb(255, 255, 255);
+    color: white;
+    margin:10px;
+    width: 97%;
+    height: 70%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Header{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.Product{
+    display: flex;
+    
 }

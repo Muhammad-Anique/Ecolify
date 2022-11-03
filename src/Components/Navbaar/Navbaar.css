@@ -6,9 +6,11 @@
 
 .Navbaar{
 
-    background-color:#3853d8;
+    background-color:#2d7fc5;
+    filter: drop-shadow(0px 5px 14px #2d485b4c);
     width: 100%;
     height: 50px;
+    z-index: 3;
 }
 
 .NavContainer{
