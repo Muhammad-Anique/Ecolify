@@ -1,6 +1,5 @@
 import React from 'react'
 import Card from '../Card/Card'
-import { useState } from 'react'
 import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { setlist } from '../../productlistslice'
@@ -16,15 +15,16 @@ const Home = () => {
 const url ='https://dummyjson.com/products';
 
 useEffect(() => {
+  const fetchProducts = async () => {
+    const data = await fetch(url);
+    const prod = await data.json();
+    dispatch(setlist(prod.products));
+    console.log(pList);
+  };
   fetchProducts();
 }, []);
 
-const fetchProducts = async () => {
-  const data = await fetch(url);
-  const prod = await data.json();
-  dispatch(setlist(prod.products));
-  console.log(pList);
-};
+
 
 
   return (
