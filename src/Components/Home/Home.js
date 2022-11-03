@@ -22,7 +22,7 @@ useEffect(() => {
     console.log(pList);
   };
   fetchProducts();
-}, []);
+}, [pList, dispatch]);
 
 
 
