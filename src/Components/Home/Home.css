@@ -38,6 +38,10 @@ body{
 .c{
 margin:4px;
 }
+.c:hover{
+    color: blue;
+    cursor: pointer;
+}
 
 .banner{
     width: 100%;
@@ -75,3 +79,14 @@ margin:4px;
     display: flex;
     
 }
+
+.Pcard{
+
+    width: max-content;
+    height: max-content;
+}
+/* .Pcard:hover{
+    position: absolute;
+    background-color: black;
+    z-index: 9;
+} */
