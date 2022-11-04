@@ -1,4 +1,5 @@
-import React from 'react'
+import React, {component} from 'react'
+import ReactHover from 'react-hover'
 import Card from '../Card/Card'
 import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
@@ -74,7 +75,7 @@ function setlink(string){
       </div>
       <div className='cont'>
        {pList.map(product => {
-        return (<div className='Pcard'><Card hoverable key={product.id} title={product.title} img={product.thumbnail} price={product.price} /></div>);
+        return (<Card hoverable key={product.id} title={product.title} img={product.thumbnail} price={product.price} />);
       })}
     </div>
     </div>
