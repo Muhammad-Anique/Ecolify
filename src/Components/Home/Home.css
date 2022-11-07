@@ -2,6 +2,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    text-decoration: none;
 }
 
 body{
@@ -80,13 +81,4 @@ margin:4px;
     
 }
 
-.Pcard{
 
-    width: max-content;
-    height: max-content;
-}
-/* .Pcard:hover{
-    position: absolute;
-    background-color: black;
-    z-index: 9;
-} */

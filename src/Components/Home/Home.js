@@ -5,18 +5,19 @@ import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { setlist } from '../../productlistslice'
 import { seturl } from '../../urlSlice'
+import { setPno } from '../../PnoSlice'
 import './Home.css'
 import banner from '../../banner.png'
 import Filterbar from '../Filterbar/Filterbar'
+import { useState } from 'react'
 
 
 const Home = () => {
 
+  const ProductNo= useSelector((state) => state.Pno.data );
   const pList = useSelector((state) => state.list.data);
   const url = useSelector((state) => state.url.data);
   const dispatch = useDispatch();
-
-
 
 
 useEffect(() => {
@@ -30,8 +31,6 @@ useEffect(() => {
 }, []);
 
 
-
-
 useEffect(() => {
   const fetchProducts = async () => {
     const data = await fetch(url);
@@ -41,6 +40,12 @@ useEffect(() => {
   };
   fetchProducts();
 }, [url]);
+
+
+function setId(id){
+  dispatch(setPno(id));
+  console.log(ProductNo);
+}
 
 
 function setlink(string){
@@ -70,12 +75,13 @@ function setlink(string){
           <div className='c'><p onClick={()=>{setlink('https://dummyjson.com/products/category/tops')}}>tops</p></div>     
           <div className='c'><p onClick={()=>{setlink('https://dummyjson.com/products/category/mens-shirts')}}>Mens Shirts</p></div>     
           <div className='c'><p onClick={()=>{setlink('https://dummyjson.com/products/category/lighting')}}>Lighting</p></div>     
-          <div className='c'><p onClick={()=>{setlink('https://dummyjson.com/products/category/sunglasses')}}>Sunglasses</p></div>  
+          <div className='c'><p onClick={()=>{setlink('https://dummyjson.com/products/category/sunglasses')}}>Sunglasses</p></div> 
+        <h3>{ProductNo}</h3>
         </div>
       </div>
       <div className='cont'>
        {pList.map(product => {
-        return (<Card hoverable key={product.id} title={product.title} img={product.thumbnail} price={product.price} />);
+        return (<div onClick={()=>{setId(product.id)}}><a href={`product/id=${product.id}`} ><Card hoverable key={product.id} title={product.title} img={product.thumbnail} price={product.price}  /></a></div>);
       })}
     </div>
     </div>
@@ -84,3 +90,9 @@ function setlink(string){
 }
 
 export default Home
+
+
+
+
+
+

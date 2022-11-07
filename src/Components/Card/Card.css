@@ -12,20 +12,33 @@
   margin-left:5px;
 }
 
+.Card:hover {
+background-color: #d9dbdf75;
+color: white;
+}
+
+
+
 .img{
     width: 100%;
     height : 230px;
 }
 
-.desc_price{
+.Card .desc_price{
 margin-bottom: 5px;
 color: rgb(0, 60, 255);
 }
 
+.desc_price:hover{
+  color: rgb(206, 214, 60);
+}
+
 .desc_title{
     margin-bottom: 5px;
+    color: black;
 }
 
 .desc{
   margin:15px;
 }
+

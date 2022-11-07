@@ -1,0 +1,41 @@
+.category{
+
+    background-color: rgba(0, 85, 255, 0.558);
+    color: white;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.imgArray{
+    display: flex;
+    flex-direction: column;
+}
+
+.i{
+    width: 100px;
+    height: 100px;
+}
+
+.imageBlock{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.coverimg{
+
+    padding : 10px;
+    margin : 10px;
+}
+
