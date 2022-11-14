@@ -1,6 +1,7 @@
 import { Outlet} from "react-router-dom";
 import './App.css';
 import Navbaar from "./Components/Navbaar/Navbaar";
+import Cart from "./Components/Cart/Cart";
 
 
 function App() {

@@ -11,6 +11,21 @@ const Product = (props) => {
     var b = 0;
     const [product, setProduct]=useState('\0');
     const [images, setImages] =useState([]);
+    const [bigpic, setbigpic] =useState('\0');
+
+    const [counter, setCounter] = useState(0)
+  
+  // Function is called everytime increment button is clicked
+  const inc = () => {
+    // Counter state is incremented
+    setCounter(counter + 1)
+  }
+  
+  // Function is called everytime decrement button is clicked
+  const dec = () => {
+    // Counter state is decremented
+    if(counter>0)
+    setCounter(counter - 1)}
 
 useEffect(()=>{
 
@@ -19,13 +34,18 @@ useEffect(()=>{
         const prod = await data.json();
         setProduct(prod);
         setImages(prod.images);
+        setbigpic(prod.thumbnail);
+        console.log(prod.thumbnail);
         console.log(product);
         console.log(images);
       };
+      
 
       fetchProducts();
 
 },[])
+
+
 
   return (
     <div>
@@ -39,24 +59,33 @@ useEffect(()=>{
 
         <div >
         <tbody className='imgArray'>
-        {images.map((object, i) => <img className='i' src={object} key={i++} />)}
+        {images.map((object, i) => <img className='i' onClick={()=>{setbigpic(images[i-1])}} src={object} key={i++} />)}
        </tbody>
        </div>
 
        <div>
-      <img src={product.thumbnail} alt="" />
+      <img className="Thumbnail" src={bigpic} alt="" />
       </div>
 
       </div>
 
-
-      
-      <div>
+      <div className="desc">
       <h1>{product.title}</h1>
-      <p>{product.description}</p>
-      <h5>{product.price}</h5>
-      <h5>{product.rating}</h5>
+      <p className='ele'>{product.description}</p>
+      <h4 className='ele'>Rating : {product.rating}</h4>
+      <h2 className='ele cl'>${product.price}</h2>
+
+
+      <div style={{marginBottom:'10px', marginTop:'20px', display:"flex" }}>
+      <button className='inc_dec_button' onClick={dec}>-</button>
+      <h2 style={{color: "#2d7fc5",marginLeft:"10px", marginRight:"10px" ,height:"35px",width:"45px",border:"1px solid #2d7fc5",textAlign:"center", justifyItems:"center"}}>{counter}</h2> 
+      <button className='inc_dec_button' onClick={inc}>+</button>
       </div>
+
+      <button className='wish'>Add to Wish List</button>
+
+      </div>
+  
        </div>
 
 

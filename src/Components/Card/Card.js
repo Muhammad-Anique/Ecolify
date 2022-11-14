@@ -12,7 +12,7 @@ const Card = (props) => {
 
     <div className={cclass}>
       <img className='img' src={props.img} alt="" />
-      <div className='desc'>
+      <div className='description'>
       <h5 className='desc_title'>{props.title}</h5>
       <h5 className='desc_price'>${props.price}.00</h5>
       </div>

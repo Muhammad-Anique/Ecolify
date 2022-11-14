@@ -1,7 +1,7 @@
 .category{
 
-    background-color: rgba(0, 85, 255, 0.558);
-    color: white;
+    background-color: rgba(231, 238, 253, 0.558);
+    color: black;
     height: 50px;
     display: flex;
     justify-content: center;
@@ -12,13 +12,26 @@
 .imgArray{
     display: flex;
     flex-direction: column;
+    margin:5px;
+}
+
+.Thumbnail{
+    width:700px;
+    max-height: 550px;
+    margin:5px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .i{
     width: 100px;
     height: 100px;
+    margin:3px;
 }
 
+.i:hover{
+    border: 2px solid black;
+}
 .imageBlock{
     display: flex;
     justify-content: center;
@@ -27,9 +40,14 @@
 
 .page{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
+    padding:30px;
+    margin-left:200px;
+    margin-right:200px;
+    max-height: 600px;
+
 }
 
 
@@ -39,3 +57,41 @@
     margin : 10px;
 }
 
+
+.desc{
+    margin-left:20px;
+    height:500px;
+    padding-top:50px;
+    width: max-content;
+}
+
+.ele{
+    margin-top:10px;
+}
+.cl{
+    color:#2d7fc5;
+}
+
+.inc_dec_button{
+    background-color: white;
+    color:  #2d7fc5;
+    width:35px;
+    height: 35px;
+    border: 1px solid #2d7fc5;
+
+}
+
+.textbox{
+    width: 50px;
+    height: 35px;
+    margin: 2px;
+}
+
+
+.wish{
+    background-color: #2d7fc5;
+    height: 50px;
+    width: 130px;
+    margin-top:10px ;
+    color: white;
+}

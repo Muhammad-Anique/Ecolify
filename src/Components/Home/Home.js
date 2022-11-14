@@ -10,6 +10,7 @@ import './Home.css'
 import banner from '../../banner.png'
 import Filterbar from '../Filterbar/Filterbar'
 import { useState } from 'react'
+import Cart from '../Cart/Cart'
 
 
 const Home = () => {
@@ -56,6 +57,7 @@ function setlink(string){
 
   return (
     <>
+     <Cart/>
     <div className='Header'>
     <div>
       <img className='banner' src={banner} alt="" />

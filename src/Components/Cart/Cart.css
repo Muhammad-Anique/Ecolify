@@ -1,0 +1,15 @@
+.Cart{
+    position: absolute;
+    height:max-content;
+    display: none;
+    justify-content: center;
+    min-height: 700px;
+    width: 400px;
+    background-color: rgb(255, 255, 255);
+    z-index:8;
+}
+
+.shopping_desc{
+    margin:10px;
+    color: #2d7fc5;
+}
