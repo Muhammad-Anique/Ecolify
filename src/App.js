@@ -21,6 +21,7 @@ function App() {
 
 
       <Navbaar/>
+      <Cart id="cart1"/>
       <div>
       <div>
       <Outlet />

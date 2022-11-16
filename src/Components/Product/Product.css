@@ -95,3 +95,7 @@
     margin-top:10px ;
     color: white;
 }
+
+.wish:hover{
+    background-color: #2d7ec5a9;
+}

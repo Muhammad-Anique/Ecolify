@@ -1,10 +1,27 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
+import { setcartlist } from '../../cartSlice';
+import { setTotal } from '../../totalSlice';
 import './Product.css'
 
 
 const Product = (props) => {
+
+  class CartItem {
+    constructor(name, desc, quantity, price, url) {
+      this.Name = name;
+      this.Itemdesc = desc;
+      this.Quantity = quantity;
+      this.Price =price;
+      this.Image=url;
+    }
+  }
+  
+
+  const Total = useSelector((state) => state.Total.data );
+  const cartItemlist = useSelector((state) => state.cartlist.data );
+  const dispatch = useDispatch();
 
     var url = window.location.href;
     var id = url.slice(33);
@@ -46,6 +63,19 @@ useEffect(()=>{
 },[])
 
 
+  function addtolist(name, desc, q, p, u)
+  {
+    console.log('url image  = ' + u);
+    const cartItem = new CartItem(name, desc, q, p, u);
+    dispatch(setTotal(q*p));
+    console.log(cartItem);
+    dispatch(setcartlist(cartItem));
+    console.log("list is : - ");
+    console.log(cartItemlist);
+
+  }
+
+
 
   return (
     <div>
@@ -82,7 +112,7 @@ useEffect(()=>{
       <button className='inc_dec_button' onClick={inc}>+</button>
       </div>
 
-      <button className='wish'>Add to Wish List</button>
+      <button className='wish' onClick={()=>{addtolist(product.title,product.description,counter,product.price, product.thumbnail)}}>Add to Wish List</button>
 
       </div>
   

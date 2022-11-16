@@ -57,7 +57,7 @@ function setlink(string){
 
   return (
     <>
-     <Cart/>
+     <Cart id="cart1"/>
     <div className='Header'>
     <div>
       <img className='banner' src={banner} alt="" />
