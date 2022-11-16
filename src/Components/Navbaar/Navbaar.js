@@ -28,8 +28,8 @@ const Navbaar = () => {
             <div className='At' onClick={()=>{cartclick()}}><span className="material-symbols-outlined">shopping_bag</span></div>
             <div className='logo'><h1>Ecolify</h1></div>
             <div style={{display:"flex"}}>
-            <div className='At'><span className="material-symbols-outlined">search</span></div>
-            <div className='At'><span className="material-symbols-outlined">menu</span></div>
+            <div className='At'><span className="material-symbols-outlined"></span></div>
+            
             </div>
         </div>    
     </div>
