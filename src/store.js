@@ -5,6 +5,7 @@ import PnoReducer from './PnoSlice'
 import cartClickReducer from './cartClick'
 import cartSliceReducer from './cartSlice'
 import totalSliceReducer from './totalSlice'
+import viewReducer from './viewSlice'
 
 export const store = configureStore({
   reducer: {
@@ -14,6 +15,7 @@ export const store = configureStore({
     cartClick: cartClickReducer,
     cartlist: cartSliceReducer,
     Total: totalSliceReducer,
+    view: viewReducer,
 
   },
 })

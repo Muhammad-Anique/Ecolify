@@ -11,15 +11,31 @@ import banner from '../../banner.png'
 import Filterbar from '../Filterbar/Filterbar'
 import { useState } from 'react'
 import Cart from '../Cart/Cart'
+import CardListView from '../CardListView/CardListView'
 
 
 const Home = () => {
 
   const ProductNo= useSelector((state) => state.Pno.data );
+  const [container, setcontainer] = useState("cont1");
   const pList = useSelector((state) => state.list.data);
   const url = useSelector((state) => state.url.data);
+  const ViewIsCliked = useSelector((state) => state.view.data);
   const dispatch = useDispatch();
+useEffect(()=>{
 
+  if(ViewIsCliked)
+  {
+    console.log("hi");
+    setcontainer("cont2");
+  }
+  else
+  {
+    console.log("bye");
+    setcontainer("cont1");
+
+  }
+});
 
 useEffect(() => {
   const fetchProducts = async () => {
@@ -57,7 +73,6 @@ function setlink(string){
 
   return (
     <>
-     <Cart id="cart1"/>
     <div className='Header'>
     <div>
       <img className='banner' src={banner} alt="" />
@@ -81,10 +96,19 @@ function setlink(string){
         <h3>{ProductNo}</h3>
         </div>
       </div>
-      <div className='cont'>
-       {pList.map(product => {
-        return (<div onClick={()=>{setId(product.id)}}><a href={`product/id=${product.id}`} ><Card hoverable key={product.id} title={product.title} img={product.thumbnail} price={product.price}  /></a></div>);
-      })}
+      <div className={container}>
+       {
+       pList.map(product => {
+        if(ViewIsCliked)
+        {
+        return (<div onClick={()=>{setId(product.id)}}><a href={`product/id=${product.id}`} ><CardListView hoverable key={product.id} title={product.title} img={product.thumbnail} price={product.price} descrip={product.description} rating={product.rating} brand={product.brand} discount={product.discountPercentage} /></a></div>);
+        }
+        else{
+          return (<div onClick={()=>{setId(product.id)}}><a href={`product/id=${product.id}`} ><Card hoverable key={product.id} title={product.title} img={product.thumbnail} price={product.price} descrip={product.description} rating={product.rating} brand={product.brand} discount={product.discountPercentage} /></a></div>);
+        }
+      })
+      
+      }
     </div>
     </div>
     </>
